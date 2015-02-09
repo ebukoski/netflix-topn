@@ -17,12 +17,16 @@ Command line tool "Groot" that analyzes the popularity of an organization's GitH
 
 ## Usage
 ```
-usage: groovy Groot [options] [orgs]
+usage: Groot [options] [orgs]
 Options:
- -d       debug output
- -help    print this message
- -n <n>   Top N repos (default 10)
- -t <t>   Maximum threads to use (default 10)
+ -d             debug output
+ -help          print this message
+ -n <n>         Top N repos (default 10)
+ -pass <pass>   Password for API login (defaults to anonymous if not
+                provided)
+ -t <t>         Maximum threads to use (default 10)
+ -user <user>   Username for API login (defaults to anonymous if not
+                provided)
 ```
 
 ## Installing
@@ -95,7 +99,7 @@ INFO -
 ##### 3) analyze the NASA repos and return Top 3 ranking using 15 threads (with debug)
 ```
 $ groovy Groot -d -n 3 -t 15 nasa
-DEBUG - args n: 3, orgs: [nasa], threads: 15
+DEBUG - args n: 3, orgs: [nasa], threads: 15, user: false
 DEBUG - REST: repo: https://api.github.com/orgs/nasa/repos?page=1
 DEBUG - REST: repo: https://api.github.com/orgs/nasa/repos?page=2
 DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-ISS-Robonaut-2-Vision-Algorithm-Challenge/pulls
