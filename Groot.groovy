@@ -9,7 +9,6 @@ import org.apache.log4j.Level
 
 @Log4j
 class Groot {
-  public static String PATTERN = "%d{ABSOLUTE} %-5p [%c{1}] %m%n"
   def repoThreadPool = null
   def pullThreadPool = null
   def repos = []
@@ -28,22 +27,22 @@ class Groot {
     
     def repocount = 0
     orgs.each {
-        Groot groot = new Groot(threads)
-        groot.githubRepos(it)
+      Groot groot = new Groot(threads)
+      groot.githubRepos(it)
 
-        def topstars = groot.githubTopRepos(n, "stargazers_count")
-        dump(it, topstars, "stargazers_count", n)
+      def topstars = groot.githubTopRepos(n, "stargazers_count")
+      dump(it, topstars, "stargazers_count", n)
 
-        def forks = groot.githubTopRepos(n, "forks_count")
-        dump(it, forks, "forks_count", n)
+      def forks = groot.githubTopRepos(n, "forks_count")
+      dump(it, forks, "forks_count", n)
 
-        def pulls = groot.githubTopRepos(n, "ext_pullrequests_count")
-        dump(it, pulls, "ext_pullrequests_count", n)
+      def pulls = groot.githubTopRepos(n, "ext_pullrequests_count")
+      dump(it, pulls, "ext_pullrequests_count", n)
 
-        def contribs = groot.githubTopRepos(n, "ext_contrib_pct")
-        dump(it, contribs, "ext_contrib_pct", n)    
+      def contribs = groot.githubTopRepos(n, "ext_contrib_pct")
+      dump(it, contribs, "ext_contrib_pct", n)    
         
-        repocount += groot.repos.size()
+      repocount += groot.repos.size()
     }
     
     def time = (System.currentTimeMillis()-start) / 1000.0
@@ -93,16 +92,17 @@ class Groot {
     def response = github.get(path: "/orgs/${org}/repos", query: [page:page], headers: headers)
     
     if (ext_pull_request) {
-       response.data.each { it.ext_pullrequests_count = 0 }
-       def futures = (0..response.data.size()-1).collect { i ->
+      response.data.each { it.ext_pullrequests_count = 0 }
+      def futures = (0..response.data.size()-1).collect { i ->
           pullThreadPool.submit( { githubPullRequestCount(i, response.data[i].owner.login, response.data[i].name) } as Callable);      
-       }
-       futures.each { 
-         def map = it.get() 
-         response.data[map.i].ext_pullrequests_count += map.count
-       }
-       response.data.each { it.ext_contrib_pct = (it.forks_count == 0) ? 0 : it.ext_pullrequests_count * 100 / it.forks_count
-       }
+      }
+      futures.each { 
+        def map = it.get() 
+        response.data[map.i].ext_pullrequests_count += map.count
+      }
+      response.data.each { 
+	    it.ext_contrib_pct = (it.forks_count == 0) ? 0 : it.ext_pullrequests_count * 100 / it.forks_count
+      }
     }
   }  
   
@@ -127,5 +127,4 @@ class Groot {
     def order = descending ? -1 : 1 
     repos?.sort { order * it."${prop}" }[0..m-1] 
   }
-  
 }
