@@ -46,7 +46,7 @@ class Groot {
     }
     
     def time = (System.currentTimeMillis()-start) / 1000.0
-    log.debug "elapsed time: ${time} sec, ${repocount} repos, ${repocount / time} repos per sec"
+    log.debug "elapsed time: ${time} sec, ${repocount} repos, ${repocount / time} repos/sec"
   }
 
   static def parseOptions(args) {
