@@ -8,12 +8,13 @@ Command line tool "Groot" that analyzes the popularity of an organization's GitH
 * Top-N repos by contribution percentage (PRs/forks).
 
 ## Features
-* Written in [Groovy](http://groovy.codehaus.org/)
-* Supports threaded REST calls, threads are configurable at the command line
+* Written in [Groovy](http://groovy.codehaus.org/), an object-oriented programming language for the Java platform
+* Supports threaded REST calls through Java Concurrency API
+* Thread pool size is configurable at the command line
 * Supports analyzing multiple github repos with single command line call
-* Debug output for performance and REST call info
+* Debug output for performance and REST call detail
 * Log4j logging
-* Encapsulated in single class that can be reused in any JVM applicaiton
+* Encapsulated in single class that can be reused in any JVM application
 
 ## Usage
 ```
