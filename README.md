@@ -29,7 +29,7 @@ Options:
 1. Install Java 7 or later
 1. [Install Groovy 2.4](http://groovy.codehaus.org/Installing+Groovy)
 1. Download [Groovy.groot](https://raw.githubusercontent.com/ebukoski/netflix-topn/master/Groot.groovy)
-1. Run it!
+1. Run it!  NOTE: the first time run will be a bit slow as all dependencies are downloaded.
 ```
 $ groovy Groot -help
 ```
