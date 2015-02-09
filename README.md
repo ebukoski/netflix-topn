@@ -8,16 +8,16 @@ Command line tool "Groot" that analyzes the popularity of an organization's GitH
 * Top-N repos by contribution percentage (PRs/forks).
 
 ## Features
-* Written in Groovy
+* Written in [Groovy](http://groovy.codehaus.org/)
 * Supports threaded REST calls, threads are configurable at the command line
 * Supports analyzing multiple github repos with single command line call
-* Debug output for performance and call info
+* Debug output for performance and REST call info
 * Log4j logging
 * Encapsulated in single class that can be reused in any JVM applicaiton
 
 ## Usage
 ```
-usage: Groot [options] [orgs]
+usage: groovy Groot [options] [orgs]
 Options:
  -d       debug output
  -help    print this message
@@ -25,11 +25,26 @@ Options:
  -t <t>   Maximum threads to use (default 10)
 ```
 
-### Examples
+## Installing
+1. Install Java 7 or later
+1. [Install Groovy 2.4](http://groovy.codehaus.org/Installing+Groovy)
+1. Download [Groovy.groot](https://raw.githubusercontent.com/ebukoski/netflix-topn/master/Groot.groovy)
+1. Run it!
+```
+$ groovy Groot -help
+```
+
+## Limitations
+* Org and repo properites (stars, forks, etc) are assumed to be present, will error out hard if they are missing
+* Most exceptions are pushed all the way back to the stack
+* Log4J output formatting could be improved
+* Would be nice to create a [Unix-friendly Groovy script](http://groovy.codehaus.org/Running) that doesn't require Groovy on the command line
+
+## Examples
 
 ##### 1) analyze the NASA repos and return Top 1 ranking using default thread settings
 ```
-$ Groot -n 1 nasa
+$ groovy Groot -n 1 nasa
 INFO - Top 1 rankings for [nasa] by [stargazers_count]
 INFO - rank: 1, id: 4193864, name: mct, stargazers_count: 470
 INFO -
@@ -44,9 +59,9 @@ INFO - rank: 1, id: 24205073, name: Open-Source-Catalog, ext_contrib_pct: 25
 INFO -
 ```
 
-##### 2) analyze the Nasa repos and return Top 3 ranking using 15 threads
+##### 2) analyze the NASA repos and return Top 3 ranking using 15 threads
 ```
-$ Groot -n 3 -t 15 nasa
+$ groovy Groot -n 3 -t 15 nasa
 INFO - Top 3 rankings for [nasa] by [stargazers_count]
 INFO - rank: 1, id: 4193864, name: mct, stargazers_count: 470
 INFO - rank: 2, id: 3071996, name: visionworkbench, stargazers_count: 199
@@ -69,9 +84,9 @@ INFO - rank: 3, id: 4814601, name: osal, ext_contrib_pct: 18.75
 INFO -
 ```
 
-##### 2) analyze the Nasa repos and return Top 3 ranking using 15 threads (with debug)
+##### 2) analyze the NASA repos and return Top 3 ranking using 15 threads (with debug)
 ```
-$ Groot -d -n 3 -t 15 nasa
+$ groovy Groot -d -n 3 -t 15 nasa
 DEBUG - args n: 3, orgs: [nasa], threads: 15
 DEBUG - getting repo for org: nasa, page: 1, ext_pull_request: true
 DEBUG - getting repo for org: nasa, page: 2, ext_pull_request: true
@@ -150,3 +165,9 @@ INFO - rank: 3, id: 4814601, name: osal, ext_contrib_pct: 18.75
 INFO -
 DEBUG - elapsed time: 7.696 sec, 53 repos, 6.8866943867 repos per sec 
 ```
+## References
+The following links could be helpful:
+* Github API: http://developer.github.com/v3/
+* List an organization’s repos: http://developer.github.com/v3/repos/#list-organization-repositories
+* List pull requests: http://developer.github.com/v3/pulls/
+* Rate limits on API: https://developer.github.com/v3/#rate-limiting
