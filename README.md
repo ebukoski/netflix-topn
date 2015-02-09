@@ -1,4 +1,4 @@
-# netflix-topn
+# netflix-topn (aka Groot)
 
 Command line tool "Groot" that analyzes the popularity of an organization's GitHub repos.  Reports statistics for the following four dimensions:
 
