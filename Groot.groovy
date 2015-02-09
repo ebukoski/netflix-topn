@@ -12,7 +12,7 @@ class Groot {
   def repoThreadPool = null
   def pullThreadPool = null
   def repos = []
-  def headers = ["User-Agent":"Apache HTTPClient"]
+  static def headers = ["User-Agent":"Apache HTTPClient"]
 
   static void main(String[] args) {
     def start = System.currentTimeMillis()
