@@ -1,4 +1,4 @@
-# netflix-topn (aka Groot)
+# <img src="http://th00.deviantart.net/fs71/PRE/f/2014/255/c/7/groot_dancing_by_vanessabettencourt-d7yy2eu.jpg" height="100" width="100"> netflix-topn (aka Groot)
 
 Command line tool "Groot" that analyzes the popularity of an organization's GitHub repos.  Reports statistics for the following four dimensions:
 
