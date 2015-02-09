@@ -80,14 +80,14 @@ class Groot {
   } 
     
   def githubPullRequestCount = { i, owner, repo ->
-    log.debug("getting pull count for owner: ${owner}, repo: ${repo}")
+    log.debug("REST: pull count: https://api.github.com/repos/${owner}/${repo}/pulls")
     def github = new RESTClient("https://api.github.com"); 
     def response = github.get(path: "/repos/${owner}/${repo}/pulls", headers: headers)
     [ i: i, count: response.data.size() ]
   }
 
   def githubReposPage = { org, page, ext_pull_request ->
-    log.debug "getting repo for org: ${org}, page: ${page}, ext_pull_request: ${ext_pull_request}"; 
+    log.debug "REST: repo: https://api.github.com/orgs/${org}/repos?page=${page}"; 
     def github = new RESTClient("https://api.github.com"); 
     def response = github.get(path: "/orgs/${org}/repos", query: [page:page], headers: headers)
     
