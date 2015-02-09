@@ -4,7 +4,7 @@ class GrootTest extends GroovyTestCase {
   void testDotnet() {
     Groot groot = new Groot()
     groot.githubRepos("dotnet")
-    assert groot.repos.size() == 11
+    assert groot.repos.size() == 12
         
     def topstars = groot.githubTopRepos(5, "stargazers_count")
     assert topstars[0].name == "corefx"
