@@ -38,7 +38,15 @@ $ groovy Groot -help
 * Org and repo properites (stars, forks, etc) are assumed to be present, will error out hard if they are missing
 * Most exceptions are pushed all the way back to the stack
 * Log4J output formatting could be improved
-* Would be nice to create a [Unix-friendly Groovy script](http://groovy.codehaus.org/Running) that doesn't require Groovy on the command line
+* Would be nice to create a [Unix-friendly Groovy script](http://groovy.codehaus.org/Running) that doesn't require Groovy on the command lin
+
+## Tests
+
+JUnit tests are provided in the file GroovyTest.groovy.  To run the tests:
+
+```
+$ groovy GrootTest
+```
 
 ## Examples
 
