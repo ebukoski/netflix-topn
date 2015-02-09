@@ -88,61 +88,61 @@ INFO -
 ```
 $ groovy Groot -d -n 3 -t 15 nasa
 DEBUG - args n: 3, orgs: [nasa], threads: 15
-DEBUG - getting repo for org: nasa, page: 1, ext_pull_request: true
-DEBUG - getting repo for org: nasa, page: 2, ext_pull_request: true
-DEBUG - getting pull count for owner: nasa, repo: NTL-ISS-Robonaut-2-Vision-Algorithm-Challenge
-DEBUG - getting pull count for owner: nasa, repo: SCRD
-DEBUG - getting pull count for owner: nasa, repo: cash
-DEBUG - getting pull count for owner: nasa, repo: Kodiak
-DEBUG - getting pull count for owner: nasa, repo: eefs
-DEBUG - getting pull count for owner: nasa, repo: TTECTrA
-DEBUG - getting pull count for owner: nasa, repo: NASA-3D-Resources
-DEBUG - getting pull count for owner: nasa, repo: autodoc
-DEBUG - getting pull count for owner: nasa, repo: NTL-Asteroid-Tracker
-DEBUG - getting pull count for owner: nasa, repo: NTL-Lunar-Mapping-and-Modeling-Portal
-DEBUG - getting pull count for owner: nasa, repo: WellClear
-DEBUG - getting pull count for owner: nasa, repo: NTL-Planetary-Data-System-API
-DEBUG - getting pull count for owner: nasa, repo: Formation-Flying
-DEBUG - getting pull count for owner: nasa, repo: NTL-Solution-Mechanism-Guide
-DEBUG - getting pull count for owner: nasa, repo: OpenSPIFe
-DEBUG - getting pull count for owner: nasa, repo: NTL-Asteroid-Data-Hunter
-DEBUG - getting pull count for owner: nasa, repo: api-docs
-DEBUG - getting pull count for owner: nasa, repo: DAVEtools
-DEBUG - getting pull count for owner: nasa, repo: NASA-Space-Weather-Media-Viewer
-DEBUG - getting pull count for owner: nasa, repo: CrisisMappingToolkit
-DEBUG - getting pull count for owner: nasa, repo: libSPRITE
-DEBUG - getting pull count for owner: nasa, repo: pvslib
-DEBUG - getting pull count for owner: nasa, repo: XPlaneConnect
-DEBUG - getting pull count for owner: nasa, repo: europa
-DEBUG - getting pull count for owner: nasa, repo: Open-Source-Catalog
-DEBUG - getting pull count for owner: nasa, repo: StereoPipeline
-DEBUG - getting pull count for owner: nasa, repo: visionworkbench
-DEBUG - getting pull count for owner: nasa, repo: OpenMDAO-Framework
-DEBUG - getting pull count for owner: nasa, repo: World-Wind-Java
-DEBUG - getting pull count for owner: nasa, repo: OpenVSP
-DEBUG - getting pull count for owner: nasa, repo: CertWare
-DEBUG - getting pull count for owner: nasa, repo: echo
-DEBUG - getting pull count for owner: nasa, repo: MCT-Plugins
-DEBUG - getting pull count for owner: nasa, repo: coeci-cms-mpsp
-DEBUG - getting pull count for owner: nasa, repo: VADER
-DEBUG - getting pull count for owner: nasa, repo: github-latest-commits-widget
-DEBUG - getting pull count for owner: nasa, repo: digital-strategy
-DEBUG - getting pull count for owner: nasa, repo: cfe
-DEBUG - getting pull count for owner: nasa, repo: osal
-DEBUG - getting pull count for owner: nasa, repo: mct
-DEBUG - getting pull count for owner: nasa, repo: code.nasa.gov
-DEBUG - getting pull count for owner: nasa, repo: NASA-APIs
-DEBUG - getting pull count for owner: nasa, repo: data.nasa.gov
-DEBUG - getting pull count for owner: nasa, repo: 39A
-DEBUG - getting pull count for owner: nasa, repo: NTL-Disruption-Tolerant-Networking
-DEBUG - getting pull count for owner: nasa, repo: NTL-ISS-Food-Intake-Tracker
-DEBUG - getting pull count for owner: nasa, repo: CoECI-CMS-Healthcare-Fraud-Prevention
-DEBUG - getting pull count for owner: nasa, repo: CoECI-CMS-Open-Payment
-DEBUG - getting pull count for owner: nasa, repo: NTL-Electrocardiogram
-DEBUG - getting pull count for owner: nasa, repo: CoECI-USAID-Atrocity-Prevention-Model
-DEBUG - getting pull count for owner: nasa, repo: NTL-Crater-Detection-Challenge
-DEBUG - getting pull count for owner: nasa, repo: NTL-Collective-Minds-and-Machines-Exploration
-DEBUG - getting pull count for owner: nasa, repo: T-MATS
+DEBUG - REST: repo: https://api.github.com/orgs/nasa/repos?page=1
+DEBUG - REST: repo: https://api.github.com/orgs/nasa/repos?page=2
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-ISS-Robonaut-2-Vision-Algorithm-Challenge/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/autodoc/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/cash/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/SCRD/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/WellClear/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/Kodiak/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/eefs/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/OpenSPIFe/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Solution-Mechanism-Guide/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Planetary-Data-System-API/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/Formation-Flying/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NASA-3D-Resources/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/TTECTrA/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Lunar-Mapping-and-Modeling-Portal/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/DAVEtools/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Asteroid-Tracker/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/Open-Source-Catalog/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Asteroid-Data-Hunter/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/europa/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/XPlaneConnect/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/pvslib/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/libSPRITE/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/CrisisMappingToolkit/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/api-docs/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/World-Wind-Java/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/OpenMDAO-Framework/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/StereoPipeline/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/visionworkbench/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NASA-Space-Weather-Media-Viewer/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/OpenVSP/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/CertWare/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/mct/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/osal/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/cfe/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/digital-strategy/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/github-latest-commits-widget/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/VADER/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/coeci-cms-mpsp/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/MCT-Plugins/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/echo/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NASA-APIs/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/code.nasa.gov/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/data.nasa.gov/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/39A/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Disruption-Tolerant-Networking/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-ISS-Food-Intake-Tracker/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/CoECI-USAID-Atrocity-Prevention-Model/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/CoECI-CMS-Open-Payment/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Electrocardiogram/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/CoECI-CMS-Healthcare-Fraud-Prevention/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/T-MATS/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Collective-Minds-and-Machines-Exploration/pulls
+DEBUG - REST: pull count: https://api.github.com/repos/nasa/NTL-Crater-Detection-Challenge/pulls
 INFO - Top 3 rankings for [nasa] by [stargazers_count]
 INFO - rank: 1, id: 4193864, name: mct, stargazers_count: 470
 INFO - rank: 2, id: 3071996, name: visionworkbench, stargazers_count: 199
@@ -163,7 +163,7 @@ INFO - rank: 1, id: 24205073, name: Open-Source-Catalog, ext_contrib_pct: 25
 INFO - rank: 2, id: 14899786, name: NTL-Crater-Detection-Challenge, ext_contrib_pct: 20
 INFO - rank: 3, id: 4814601, name: osal, ext_contrib_pct: 18.75
 INFO -
-DEBUG - elapsed time: 7.696 sec, 53 repos, 6.8866943867 repos per sec 
+DEBUG - elapsed time: 5.767 sec, 53 repos, 9.1902202185 repos/sec
 ```
 ## References
 The following links could be helpful:
