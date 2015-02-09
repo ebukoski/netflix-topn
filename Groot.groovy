@@ -12,9 +12,8 @@ class Groot {
   def repoThreadPool = null
   def pullThreadPool = null
   def repos = []
-  def headers = ["User-Agent":"Apache HTTPClient", 
-                 "Authorization":'Basic ' + 'ebukoski@yahoo.com:x5e33TgrD7KH3xv'.bytes.encodeBase64().toString() ]  
-  
+  def headers = ["User-Agent":"Apache HTTPClient"]
+
   static void main(String[] args) {
     def start = System.currentTimeMillis()
     def options = parseOptions(args)
@@ -23,8 +22,11 @@ class Groot {
     def threads = (options.t) ? options.t.toInteger() : 10
     def orgs = options.arguments()
     log.level = options.d ? Level.DEBUG : Level.INFO
-    log.debug "args n: ${n}, orgs: ${orgs}, threads: ${threads}"
-    
+    if (options.user && options.pass) {
+      Groot.headers += ["Authorization" : 'Basic ' + "${options.user}:${options.pass}".bytes.encodeBase64().toString()]
+    }
+    log.debug "args n: ${n}, orgs: ${orgs}, threads: ${threads}, user: ${options.user}"
+
     def repocount = 0
     orgs.each {
       Groot groot = new Groot(threads)
@@ -56,6 +58,8 @@ class Groot {
     cli.n(args: 1, argName: 'n', 'Top N repos (default 10)')
     cli.t(args: 1, argName: 't', 'Maximum threads to use (default 10)')
     cli.d('debug output')
+    cli.user(args: 1, argName: 'user', 'Username for API login (defaults to anonymous if not provided)')
+    cli.pass(args: 1, argName: 'pass', 'Password for API login (defaults to anonymous if not provided)')    
     def options = cli.parse(args)
 
     if (options.arguments().size() == 0) {
