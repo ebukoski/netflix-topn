@@ -92,7 +92,7 @@ INFO - rank: 3, id: 4814601, name: osal, ext_contrib_pct: 18.75
 INFO -
 ```
 
-##### 2) analyze the NASA repos and return Top 3 ranking using 15 threads (with debug)
+##### 3) analyze the NASA repos and return Top 3 ranking using 15 threads (with debug)
 ```
 $ groovy Groot -d -n 3 -t 15 nasa
 DEBUG - args n: 3, orgs: [nasa], threads: 15
